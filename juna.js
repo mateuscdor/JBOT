@@ -1612,7 +1612,7 @@ jsonData = JSON.parse(data);
 randIndex = Math.floor(Math.random() * jsonData.length);
 randKey = jsonData[randIndex];
 hasil = await getBuffer(randKey.result.thumbnail)
-juna.sendMessage(m.chat, { caption: `• ••º•» *${randKey.result.title}* «•º•• •\n\n${randKey.result.desc}\n${randKey.result.story}`, image: hasil, footer: wm, buttons: [{buttonId: `${prefix}tarot2`, buttonText: {displayText: '𝗡𝗘𝗫𝗧'}, type: 1}] }, {quoted: m})
+juna.sendMessage(m.chat, { caption: `• ••º•» *${randKey.result.title}* «•º•• •\n\n${randKey.result.desc}\n${randKey.result.story}`, location: { jpegThumbnail: hasil }, footer: wm, buttons: [{buttonId: `${prefix}tarot2`, buttonText: {displayText: '𝗡𝗘𝗫𝗧'}, type: 1}] }, {quoted: m})
 break
 case 'memeindo':
 if (!isPremium && global.db.data.users[m.sender].limit < 1) return reply(mess.endLimit)
@@ -6325,7 +6325,6 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 ☆═┈ CHAT
 ࿈ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 𝗖𝗛𝗔𝗧 : ${anuys.length}
 ࿈ 𝗚𝗥𝗢𝗨𝗣 𝗖𝗛𝗔𝗧 : ${anuyu.length}
-࿈ 𝗨𝗦𝗘𝗥 : ${juna.user.id.length} 
 
 ☆═┈ BOT
 ࿈ 𝗔𝗨𝗧𝗢 𝗥𝗘𝗦𝗣𝗢𝗡 : ${autorespon  ? '𝗬𝗘𝗦 ✅' : '𝗡𝗢 ❎'}
