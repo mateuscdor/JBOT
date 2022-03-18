@@ -30,7 +30,7 @@ global.api = (name, path = '/', query = {}, apikeyqueryname) => (name in global.
 
 const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) })
 
-global.db = new Low(new cloudDBAdacpter("https://json-server.junaganz.repl.co/"))
+global.db = new Low(new cloudDBAdapter("https://json-server.junaganz.repl.co/"))
 global.db.data = {
     users: {},
     chats: {},
