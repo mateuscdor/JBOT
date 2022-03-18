@@ -881,12 +881,9 @@ let pornm = `• ••º•» 𝗣𝗢𝗥𝗡 «•º•• •
 ࿈ ${prefix}donghua
 ࿈ ${prefix}xvsearch
 ࿈ ${prefix}xnxxsearch
-࿈ ${prefix}javhddsearch
 ࿈ ${prefix}javpornsearch
 ࿈ ${prefix}xvideodl
-࿈ ${prefix}xnxxdl
-࿈ ${prefix}nekosearch
-࿈ ${prefix}nekolatest`
+࿈ ${prefix}xnxxdl`
 
 let randm = `• ••º•» 𝗥𝗔𝗡𝗗𝗢𝗠 «•º•• •
 ࿈ ${prefix}coffe
@@ -3303,7 +3300,7 @@ juna.sendMessage(m.chat, listMessage, { quoted: fkontak})
                 if (!isCreator && !isPremium && !isAdmins) throw 'Fitur ini hanya bisa digunakan digroup untuk owner/user premium/admin saja'
 let teks = `• ••º•» 𝗧𝗔𝗚 𝗔𝗟𝗟 «•º•• •
  
-•º•» *Pesan : ${q ? q : ''}*\n\n`
+•º•» *Pesan :* ${q ? q : ''}\n\n`
                 for (let mem of participants) {
                 teks += `࿈ @${mem.id.split('@')[0]}\n`
                 }
