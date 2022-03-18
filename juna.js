@@ -4840,8 +4840,10 @@ if (!isPremium && global.db.data.users[m.sender].limit < 1) return reply(mess.en
                     {buttonId: `ytmp3 ${anu.url}`, buttonText: {displayText: '♫ Audio'}, type: 1},
                     {buttonId: `ytmp4 ${anu.url}`, buttonText: {displayText: '► Video'}, type: 1}
                 ]
+                thb = await getBuffer(anu.thumbnail)
                 let buttonMessage = {
-                    image: { url: anu.thumbnail },
+                    location: {
+                    jpegThumbnail: thb },
                     caption: `
 ࿈ Title : ${anu.title}
 ࿈ Ext : Search
