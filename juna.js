@@ -4747,12 +4747,6 @@ if (!isPremium && global.db.data.users[m.sender].limit < 1) return reply(mess.en
                displayText: '𝗛𝗜𝗚𝗛',
                id: `${prefix}sendfile ${bkp.result.files.high}`,
              }
-           },
-           {
-             quickReplyButton: {
-               displayText: '𝗛𝗟𝗦',
-               id: `${prefix}sendfile ${bkp.result.files.HLS}`,
-             }
            }]
            let ranthumb = pickRandom([bkp.result.files.thumb, bkp.result.files.thumb69, bkp.result.files.thumbSlide, bkp.result.files.thumbSlide, bkp.result.files.thumbSlideBig])
            wk = await getBuffer(ranthumb)
@@ -4783,12 +4777,6 @@ if (!isPremium && global.db.data.users[m.sender].limit < 1) return reply(mess.en
              quickReplyButton: {
                displayText: '𝗛𝗜𝗚𝗛',
                id: `${prefix}sendfile ${xndl.result.files.high}`,
-             }
-           },
-           {
-             quickReplyButton: {
-               displayText: '𝗛𝗟𝗦',
-               id: `${prefix}sendfile ${xndl.result.files.HLS}`,
              }
            }]
            let ranthumb = pickRandom([xndl.result.image, xndl.result.files.thumb, xndl.result.files.thumb69, xndl.result.files.thumbSlide, xndl.result.files.thumbSlide, xndl.result.files.thumbSlideBig])
