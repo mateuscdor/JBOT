@@ -739,7 +739,6 @@ let serchm = `• ••º•» 𝗦𝗘𝗔𝗥𝗖𝗛𝗜𝗡𝗚 «•º•�
 ࿈ ${prefix}wikimedia [query]
 ࿈ ${prefix}ytsearch [query]
 ࿈ ${prefix}ringtone [query]
-࿈ ${prefix}resep [query]
 ࿈ ${prefix}jooxdl [query]
 ࿈ ${prefix}soundcloud [url]
 ࿈ ${prefix}herolist
@@ -1595,16 +1594,6 @@ her = `*• ••º•» HERO DETAIL «•º•• •*
 *Story* : ${res.background_story}`
 m.reply(her)
 break
-case 'resepmasakan':
-case 'resep':
-case 'masakan':
-if (!isPremium && global.db.data.users[m.sender].limit < 1) return reply(mess.endLimit)
-db.data.users[m.sender].limit -= 1 
-if (!q) return reply(`Example: ${prefix + command} nasi kuning`)
-mask = await fetchJson(`https://api.zeks.me/api/resep-masak?apikey=apivinz&q=${q}`)
-knt = `*Judul :* ${mask.title}\n*Sumber :* ${mask.url}\n*Kesulitan :* ${mask.tingkat}\n\n*Bahan :* ${mask.bahan}\n*Caranya :* ${mask.cara}`
-juna.sendMessage(m.chat, { image: { url: mask.thumb },  caption: knt }, { quoted: m })
-break
 case 'darkjokes':
 if (!isPremium && global.db.data.users[m.sender].limit < 1) return reply(mess.endLimit)
 db.data.users[m.sender].limit -= 1 
@@ -1613,7 +1602,7 @@ jsonData = JSON.parse(data);
 randIndex = Math.floor(Math.random() * jsonData.length);
 randKey = jsonData[randIndex];
 hasil = await getBuffer(randKey.result)
-juna.sendMessage(m.chat, { caption: 'Dark Banget Kek Hati Dia :)', image: hasil, footer: wm, buttons: [{buttonId: `${prefix}darkjokes`, buttonText: {displayText: '𝗡𝗘𝗫𝗧'}, type: 1}] }, {quoted: m})
+juna.sendMessage(m.chat, { caption: 'Dark Banget Kek Hati Dia :)', jpegThumbnail: hasil, footer: wm, buttons: [{buttonId: `${prefix}darkjokes`, buttonText: {displayText: '𝗡𝗘𝗫𝗧'}, type: 1}] }, {quoted: m})
 break
 case 'tarot2':
 if (!isPremium && global.db.data.users[m.sender].limit < 1) return reply(mess.endLimit)
