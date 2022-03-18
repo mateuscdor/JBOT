@@ -6649,7 +6649,7 @@ const sections = [
 	    {title: "𝗖𝗔𝗙-𝗜𝗗", rowId: "", description: "{•--» Thanks For Sc N Tell Me «--•}\nWA : https://tinyurl.com/y7zuqp9r\nGH : https://tinyurl.com/yd6buvlu"},
 	    {title: "𝗔𝗥𝗜𝗣 𝗦𝗞𝗜𝗨𝗪𝗘𝗥𝗦", rowId: "", description: "{•--» Thanks For Sc N Tell Me «--•}\nWA : https://tinyurl.com/y8dxwh2u\nGH : https://tinyurl.com/y9pz4geg\nYT : https://tinyurl.com/y7sfag5l\nIG : https://tinyurl.com/ybxgkb2a"},
 	    {title: "𝗞𝗔𝗛𝗙𝗭𝗫𝗭𝗬", rowId: "", description: "{•--» Thanks For Sc N Tell Me «--•}\nWA : https://tinyurl.com/ybzyrpz2\nGH : https://tinyurl.com/ydey2hmy\nYT : https://tinyurl.com/ya2e8mjr\nIG : https://tinyurl.com/yc9fww3v"},
-	    {title: "𝗙", rowId: "", description: "{•--» Thanks For Tell Me «--•}\nWA : https://tinyurl.com/yawpuobz"},
+	    {title: "𝗙", rowId: "", description: "{•--» Thanks For Sc N Tell Me «--•}\nWA : https://tinyurl.com/yawpuobz"},
 	]
     },
 ]
