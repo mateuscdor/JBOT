@@ -5482,6 +5482,7 @@ if (!isPremium && global.db.data.users[m.sender].limit < 1) return reply(mess.en
 			var wan = setik.indexOf(`${users.split`@`[0]}`)
 			premi.splice(wan)
 			fs.writeFileSync('./src/premium.json', JSON.stringify(premi))
+                        global.db.data.users[users].limit = global.limitawal.free
 			reply(`Sukses menghapus '${users.split`@`[0]}' di list Premium User`)
 			} catch (err) {
 			reply('Nomor User itu tidak ada di daftar premium!')
