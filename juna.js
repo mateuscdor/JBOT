@@ -4693,28 +4693,6 @@ if (!isPremium && global.db.data.users[m.sender].limit < 1) return reply(mess.en
                 juna.send5Text(m.chat, teks, wm, bntex)
                 }
                 break
-                case 'javhdds': case 'javhddsearch': case 'javhds': case 'javhdsearch': {
-                if (db.data.chats[m.chat].antiporn) throw 'Antiporn sedang diaktifkan digroup ini, silahkan izin ke admin untuk bisa menggunakan fitur ini di group!'
-                if (!isPremium && global.db.data.users[m.sender].limit < 1) return reply(mess.endLimit)
-                db.data.users[m.sender].limit -= 1 
-                if (!q) throw `Example : ${prefix + command} Eimi Fukada`
-                let bkp = await fetchJson(`https://api.dapuhy.xyz/api/search/javhdd?query=${q}&apikey=DappaAnjing`)
-                let teks = `• ••º•» *JAVHDD SEARCH* «•º•• •\n\n*Query* : ${q}\n`
-                for (let b of bkp.result) {
-                teks += `\n࿈ *Title* : ${b.title}\n`
-                teks += `࿈ *Kualitas* : ${b.quality}\n`
-                teks += `࿈ *Link* : ${b.url}\n─────────────────────`
-                }
-                let bntex = [{
-             urlButton: {
-               displayText: 'link nya!',
-               url: `${bkp.result[0].url}`
-             }
-           }]
-                bgs = await getBuffer(bkp.result[0].thumb)
-                juna.send5Loc(m.chat, teks, wm, bgs, bntex)
-                }
-                break
                 case 'jvps': case 'javpornsearch': case 'javps': {
                 if (db.data.chats[m.chat].antiporn) throw 'Antiporn sedang diaktifkan digroup ini, silahkan izin ke admin untuk bisa menggunakan fitur ini di group!'
                 if (!isPremium && global.db.data.users[m.sender].limit < 1) return reply(mess.endLimit)
@@ -4746,46 +4724,6 @@ if (!isPremium && global.db.data.users[m.sender].limit < 1) return reply(mess.en
                 axios.get(`https://api-anoncybfakeplayer.herokuapp.com/pastebin?text=${text}`).then ((res) => {
                 reply(res.data.result)
                 })
-                }
-                break
-                case 'nekolatest': case 'nekopoilatest': {
-                if (db.data.chats[m.chat].antiporn) throw 'Antiporn sedang diaktifkan digroup ini, silahkan izin ke admin untuk bisa menggunakan fitur ini di group!'
-                if (!isPremium && global.db.data.users[m.sender].limit < 1) return reply(mess.endLimit)
-                db.data.users[m.sender].limit -= 1 
-                let { getVideo, getLatest } = require('./lib/nekopoi')
-                let latest = await getLatest()
-                let { title, links } = await getVideo(latest.link)
-                if (links.length == 0) throw 'Video Tidak Ditemukan!'
-                teksnya = `• ••º•» *NEKOPOI LATEST* «•º•• •\n\n*Title :* ${title}\n\n${links.join('\n')}`
-                let bntex = [{
-             urlButton: {
-               displayText: 'link nya!',
-               url: `${links[0]}`
-             }
-           }]
-                bgs = await getBuffer(latest.image)
-                juna.send5Loc(m.chat, teksnya.trim(), wm, bgs, bntex)
-                }
-                break
-                case 'nekopoi': case 'nekopoisearch': case 'nekosearch': {
-                if (db.data.chats[m.chat].antiporn) throw 'Antiporn sedang diaktifkan digroup ini, silahkan izin ke admin untuk bisa menggunakan fitur ini di group!'
-                if (!isPremium && global.db.data.users[m.sender].limit < 1) return reply(mess.endLimit)
-                db.data.users[m.sender].limit -= 1 
-                if (!q) throw `Example : ${prefix + command} trap`
-                let bkp = await fetchJson(`https://api.dapuhy.xyz/api/search/nekopoi?query=${q}&apikey=DappaAnjing`)
-                let teks = `• ••º•» *NEKOPOI SEARCH* «•º•• •\n\n*Query* : ${q}\n`
-                for (let b of bkp.result) {
-                teks += `\n࿈ *Title* : ${b.title}\n`
-                teks += `࿈ *Link* : ${b.url}\n─────────────────────`
-                }
-                let bntex = [{
-             urlButton: {
-               displayText: 'link nya!',
-               url: `${bkp.result[0].url}`
-             }
-           }]
-                bgs = await getBuffer(bkp.result[0].thumb)
-                juna.send5Loc(m.chat, teks, wm, bgs, bntex)
                 }
                 break
                 case 'xvdl': case 'xvideodownload': case 'xvideodl': {
