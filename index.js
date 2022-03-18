@@ -16,6 +16,7 @@ const path = require('path')
 const PhoneNumber = require('awesome-phonenumber')
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid, writeExif } = require('./lib/exif')
 const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep } = require('./lib/myfunc')
+const cloudDBAdapter = require('./lib/cloudDBAdapter')
 
 var low
 try {
