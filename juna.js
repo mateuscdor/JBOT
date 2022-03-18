@@ -4181,9 +4181,8 @@ break
         case 'simi': case 'simisimi': {
         if (!isPremium && global.db.data.users[m.sender].limit < 1) return reply(mess.endLimit)
         db.data.users[m.sender].limit -= 1 
-        let anjaw = m.quoted ? m.quoted.text : args.slice(1).join(' ')
-        if (!!anjaw) return  reply(`Example: ${prefix + command} *<Text/ReplyText>*`)
-        simi = await fetchJson(`https://api.simsimi.net/v2/?text=${anjaw}&lc=id`)
+        if (!text) return  reply(`Example: ${prefix + command} *<Text>*`)
+        simi = await fetchJson(`https://api.simsimi.net/v2/?text=${text}&lc=id`)
         reply(simi.success)
 	}
 	break
@@ -4513,7 +4512,7 @@ for (let m of asmaul) {
             let media = await juna.downloadAndSaveMediaMessage(quoted)
             let anu = await UploadFileUgu(media)
             let [atas, bawah] = text.split`|`
-            sme = `https://api.memegen.link/images/custom/${encodeURIComponent(atas ? atas : '')}/${encodeURIComponent(bawah ? bawah : '')}.png?background=${anu.url}`
+            sme = `https://api.memegen.link/images/custom/${encodeURIComponent(atas ? atas : 'ㅤ')}/${encodeURIComponent(bawah ? bawah : 'ㅤ')}.png?background=${anu.url}`
             juna.sendImageAsSticker(m.chat, sme, m, { packname: global.packname, author: global.author })
             await fs.unlinkSync(media)
             }
@@ -5130,7 +5129,6 @@ if (!isPremium && global.db.data.users[m.sender].limit < 1) return reply(mess.en
             db.data.users[m.sender].limit -= 1 
             let anjaw = m.quoted ? m.quoted.text : args.slice(1).join(' ')
             if (!args[0] && !anjaw) throw `*${prefix + command} <kodebahasa> <textnya>* Example: ${prefix + command} id I will love you\nUntuk melihat kode bahasanya silahkan ketik ${prefix}kodebahasa atau kunjungi web https://cloud.google.com/translate/docs/languages`
-            https://hadi-api.herokuapp.com/api/tts?language=${args[0]}&text=${text}
             if (args[0] && anjaw) {
             reply(mess.wait)
             juna.sendMessage(m.chat, { audio: { url: `https://hadi-api.herokuapp.com/api/tts?language=${args[0]}&text=${anjaw}` }, mimetype: 'audio/mpeg' }, { quoted: m })
