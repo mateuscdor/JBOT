@@ -6505,17 +6505,6 @@ let tobdn = [{
                displayText: '𝗜𝗡𝗦𝗧𝗔𝗚𝗥𝗔𝗠',
                url: 'https://instagram.com/juna.1511'
              }
-           },{
-             urlButton: {
-               displayText: '𝗬𝗢𝗨𝗧𝗨𝗕𝗘',
-               url: 'https://youtube.com/channel/UC3gUvaCaFh-yTlt-Pt_u7h'
-             }
-           },
-           {
-             urlButton: {
-               displayText: '𝗢𝗪𝗡𝗘𝗥',
-               url: 'https://wa.me/message/DPO22JW4FXHHN1'
-             }
            },
            {
              quickReplyButton: {
