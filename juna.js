@@ -5008,11 +5008,7 @@ if (!isPremium && global.db.data.users[m.sender].limit < 1) return reply(mess.en
             reply(mess.wait)
             xa.StickerSearch(q).then(async data => {
             stiknha = await pickRandom(data.sticker_url)
-            let fek = await juna.sendImageAsSticker(m.chat, stiknha, m, { packname: global.packname, author: global.author })
-            let buttons = [
-                    {buttonId: `xcaristicker ${q}`, buttonText: {displayText: '𝗡𝗘𝗫𝗧'}, type: 1}
-                ]
-            juna.sendButtonText(m.chat, buttons, 'Next ?', wm, fek)
+            juna.sendImageAsSticker(m.chat, stiknha, m, { packname: global.packname, author: global.author })
             })
             .catch((err) => {
             console.log(err)
