@@ -3970,7 +3970,7 @@ juna.sendMessage(m.chat, listMessage, { quoted: fkontak})
                     let unread = i.receiptTimestamp
                     let waktu = read ? read : unread
                     teks += `࿈ @${i.userJid.split('@')[0]}\n`
-                    teks += `࿈ *Waktu :* ${moment(waktu * 1000).format('DD/MM/YY HH:mm:ss')} ࿈ *Status :* ${read ? 'Dibaca' : 'Terkirim'}\n\n`
+                    teks += `࿈ *Waktu :* ${moment(waktu * 1000).format('DD/MM/YY HH:mm:ss')}\n࿈ *Status :* ${read ? 'Dibaca' : 'Terkirim'}\n\n`
                 }
                 juna.sendTextWithMentions(m.chat, teks, m)
             }
@@ -4914,8 +4914,7 @@ if (!isPremium && global.db.data.users[m.sender].limit < 1) return reply(mess.en
                 let buttonMessage = {
                     location: {
                     jpegThumbnail: thb },
-                    caption: `
-࿈ Title : ${anu.title}
+                    caption: `࿈ Title : ${anu.title}
 ࿈ Ext : Search
 ࿈ ID : ${anu.videoId}
 ࿈ Duration : ${anu.timestamp}
