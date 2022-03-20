@@ -2160,7 +2160,7 @@ juna.sendTextWithMentions(m.chat, caption, m)
             break
             case 'infoblock': case 'blocklist': case 'blockinfo': case 'listblock': {
             if (!isPremium && global.db.data.users[m.sender].limit < 1) return reply(mess.endLimit)
-            db.users[m.sender].limit -= 1 
+            db.data.users[m.sender].limit -= 1 
             let users = Object.entries(global.db.data.users).filter(user => user[1].block)
             let caption = `• ••º•» *LIST USER TERBLOCK* «•º•• 
 
