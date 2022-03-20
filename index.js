@@ -66,6 +66,7 @@ async function startJuna() {
     juna.sendMessage(callerId, { text: `Anda telah diblokir karena menelepon bot!\nJangan menelpon bot!\nSilahkan Hubungi Owner Untuk Dibuka !`}, { quoted : pa7rick })
     await sleep(8000)
     await juna.updateBlockStatus(callerId, "block")
+    db.data.users[callerId].block = true
     }
     })
 
