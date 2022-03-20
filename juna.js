@@ -6503,11 +6503,15 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
                 let anuyu = groups.map(v => v.id)
                 let anuys = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v.id)
+		let blok = Object.entries(global.db.data.users).filter(user => user[1].block)
+		let bann = Object.entries(global.db.data.users).filter(user => user[1].banned)
                 respon = `• ••º•» 𝗜𝗡𝗙𝗢 𝗕𝗢𝗧 «•º•• •
 
 ☆═┈ CHAT
 ࿈ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 𝗖𝗛𝗔𝗧 : ${anuys.length}
 ࿈ 𝗚𝗥𝗢𝗨𝗣 𝗖𝗛𝗔𝗧 : ${anuyu.length}
+࿈ 𝗧𝗘𝗥𝗕𝗔𝗡𝗡𝗘𝗗 : ${bann.length}
+࿈ 𝗧𝗘𝗥𝗕𝗟𝗢𝗖𝗞 : ${blok.length}
 
 ☆═┈ BOT
 ࿈ 𝗔𝗨𝗧𝗢 𝗥𝗘𝗦𝗣𝗢𝗡 : ${autorespon  ? '𝗬𝗘𝗦 ✅' : '𝗡𝗢 ❎'}
