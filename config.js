@@ -7,7 +7,7 @@
 const fs = require('fs')
 const chalk = require('chalk')
 
-global.prems = JSON.parse(fs.readFileSync('./src/premium.json'))
+global.prems = ["6285693352917","6285878105984","6283139583968"]
 // Website Api
 global.APIs = {
 	zenz: 'https://zenzapi.xyz',
