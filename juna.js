@@ -56,7 +56,7 @@ let tekateki = db.data.game.tekateki = []
 let vote = db.data.others.vote = []
 let absenstart = db.data.others.absenstart = []
 let displaymenu = db.data.settings.displaymenu = 'gif'
-let canvasvariant = db.data.settings.canvasvariant = 'BA'
+let canvasvariant = db.data.settings.canvasvariant = 'A'
 
 module.exports = juna = async (juna, m, chatUpdate, store) => {
     try {
