@@ -7,7 +7,7 @@
 const fs = require('fs')
 const chalk = require('chalk')
 
-global.prems = ["6285693352917","6285878105984","6283139583968"]
+global.prems = ["6285693352917","6285878105984","6283139583968","6281288921653"]
 // Website Api
 global.APIs = {
 	zenz: 'https://zenzapi.xyz',
