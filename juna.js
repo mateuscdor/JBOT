@@ -2600,12 +2600,14 @@ juna.sendButtonText(m.chat, busa, 'Tetapi sebelum Kamu memulai game, apakah Kamu
                 let yts = require("yt-search")
 
                 let search = await yts(text)
+		var sec
+		
 
                 let no = 1
 
                 for (let i of search.all) {
 
-                let sec = [{
+                sec += [{
 
 								"title": `࿈ No : ${no++} & Type : ${i.type}`,
 
