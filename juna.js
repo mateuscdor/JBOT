@@ -2600,7 +2600,7 @@ case 'play2': case 'ytplay2': {
     {
 	title: `࿈ No : ${no++} & Type : ${i.type}`,
 	rows: [
-	    {title: `࿈ Title : ${i.title}`, rowId: `${prefix}ytmp3 ${i.url}`, description: `࿈ Video ID : ${i.videoId}\n࿈ Views : ${i.views}\n࿈ Duration : ${i.timestamp}\n࿈ Upload At : ${i.ago}\n࿈ Author : ${i.author.name}\n࿈ Url : ${i.url}`}
+	    {title: `࿈ Title : ${i.title}`, rowId: `${prefix}ytmp3 ${i.url}`, description: `࿈ Video ID : ${i.videoId}\n࿈ Views : ${i.views}\n࿈ Duration : ${i.timestamp}\n࿈ Upload At : ${i.ago}\n࿈ Url : ${i.url}`}
 	]
     },
 ]
