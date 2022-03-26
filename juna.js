@@ -2610,7 +2610,7 @@ case 'play2': case 'ytplay2': {
   footer: "_Silahlkan Dipilih, I Hope Your Happy :)_",
   title: `𝗛𝗮𝗶 𝗢𝘄𝗻𝗲𝗿 ${pushname}, ${ucapanWaktu}`,
   buttonText: "𝗧𝗢𝗨𝗖𝗛 𝗛𝗘𝗥𝗘",
-  sections
+  sections: sections
 }
 
 juna.sendMessage(m.chat, listMessage, { quoted: fkontak})
