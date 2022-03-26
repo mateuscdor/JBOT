@@ -2584,37 +2584,75 @@ juna.sendButtonText(m.chat, busa, 'Tetapi sebelum Kamu memulai game, apakah Kamu
                     delete kuismath[m.sender.split('@')[0]]
                 }
             }
-            break
-case 'play2': case 'ytplay2': {
-	    if (!isPremium && global.db.data.users[m.sender].limit < 1) return reply(mess.endLimit)
-                if (!isPremium) {
-                db.data.users[m.sender].limit -= 1 
-                } 
-                if (!text) throw `Example : ${prefix + command} story wa anime`
-                let yts = require("yt-search")
-                let search = await yts(text)
-                let teks = '• ••º•» 𝗬𝗢𝗨𝗧𝗨𝗕𝗘 𝗦𝗘𝗔𝗥𝗖𝗛 «•º•• •\n\n*Result From :* '+text+'\n'
-                let no = 1
-                for (let i of search.all) {
-                const sections = [
-    {
-	title: `࿈ No : ${no++} & Type : ${i.type}`,
-	rows: [
-	    {title: `࿈ Title : ${i.title}`, rowId: `${prefix}ytmp3 ${i.url}`, description: `࿈ Video ID : ${i.videoId}\n࿈ Views : ${i.views}\n࿈ Duration : ${i.timestamp}\n࿈ Upload At : ${i.ago}\n࿈ Url : ${i.url}`}
-	]
-    },
-]
-                }
-                const listMessage = {
-  text: '• ••º•» 𝗬𝗢𝗨𝗧𝗨𝗕𝗘 𝗣𝗟𝗔𝗬 «•º•• •\n\n*Result From :* '+text+'\n',
-  footer: "_Silahlkan Dipilih, I Hope Your Happy :)_",
-  title: `𝗛𝗮𝗶 𝗢𝘄𝗻𝗲𝗿 ${pushname}, ${ucapanWaktu}`,
-  buttonText: "𝗧𝗢𝗨𝗖𝗛 𝗛𝗘𝗥𝗘",
-  sections: sections
-}
+            break 
+		case 'play2': case 'ytplay2': {
 
-juna.sendMessage(m.chat, listMessage, { quoted: fkontak})
+	    if (!isPremium && global.db.data.users[m.sender].limit < 1) return reply(mess.endLimit)
+
+                if (!isPremium) {
+
+                db.data.users[m.sender].limit -= 1 
+
+                } 
+
+                if (!text) throw `Example : ${prefix + command} story wa anime`
+
+                let yts = require("yt-search")
+
+                let search = await yts(text)
+
+                let no = 1
+
+                for (let i of search.all) {
+
+                let sec = [{
+
+								"title": `࿈ No : ${no++} & Type : ${i.type}`,
+
+								"rows": [
+
+									{
+
+										"title": `࿈ Title : ${i.title}`, rowId: `${prefix}ytmp3 ${i.url}`,
+
+										"description": `࿈ Video ID : ${i.videoId}\n࿈ Views : ${i.views}\n࿈ Duration : ${i.timestamp}\n࿈ Upload At : ${i.ago}\n࿈ Url : ${i.url}`,
+
+										"rowId": `${prefix}ytmp3 ${i.url}`
+
+									}
+
+								]
+
+							}]
+
+                }
+
+                let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+
+                listMessage :{
+
+                    title: `𝗛𝗮𝗶 𝗢𝘄𝗻𝗲𝗿 ${pushname}, ${ucapanWaktu}`,
+
+                    description: '• ••º•» 𝗬𝗢𝗨𝗧𝗨𝗕𝗘 𝗣𝗟𝗔𝗬 «•º•• •\n\n*Result From :* '+text+'\n',
+
+                    buttonText: "𝗧𝗢𝗨𝗖𝗛 𝗛𝗘𝗥𝗘",
+
+                    footerText: "_Silahlkan Dipilih, I Hope Your Happy :)_",
+
+                    listType: "SINGLE_SELECT",
+
+                    sections: sec,
+
+          listType: 1
+
+                }
+
+            }), {})
+
+            juna.relayMessage(m.chat, template.message, { messageId: template.key.id })
+
             }
+
             break
             case 'jodohku': {
             if (!isPremium && global.db.data.users[m.sender].limit < 1) return reply(mess.endLimit)
